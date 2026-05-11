@@ -1,37 +1,231 @@
+# Professional `marg-basic.html`
+
+नीचे दिया गया पूरा code अपने `marg-basic.html` में replace कर दो.
+
+```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>MARG Basic - P.K. INFOTECH</title>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MARG Basic - PK Infotech</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #eaf4ff, #f8fbff);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 700px;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+      padding: 40px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #e8f1ff;
+      color: #0d6efd;
+      font-size: 14px;
+      font-weight: bold;
+      padding: 8px 14px;
+      border-radius: 50px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 42px;
+      color: #0d2b66;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .section-title {
+      font-size: 26px;
+      color: #0d2b66;
+      margin-bottom: 18px;
+      border-left: 5px solid #0d6efd;
+      padding-left: 12px;
+    }
+
+    .features {
+      list-style: none;
+      margin-bottom: 30px;
+    }
+
+    .features li {
+      background: #f8fbff;
+      margin-bottom: 10px;
+      padding: 14px 16px;
+      border-radius: 10px;
+      border-left: 4px solid #0d6efd;
+      color: #333;
+      font-size: 17px;
+    }
+
+    .info {
+      background: #f8fbff;
+      padding: 22px;
+      border-radius: 14px;
+      margin-bottom: 25px;
+    }
+
+    .info p {
+      margin-bottom: 10px;
+      font-size: 17px;
+      color: #333;
+    }
+
+    .info p:last-child {
+      margin-bottom: 0;
+    }
+
+    .info strong {
+      color: #0d2b66;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .btn-whatsapp {
+      background: #25d366;
+      color: white;
+    }
+
+    .btn-whatsapp:hover {
+      background: #1ebe5d;
+      transform: translateY(-2px);
+    }
+
+    .btn-home {
+      background: #0d6efd;
+      color: white;
+    }
+
+    .btn-home:hover {
+      background: #0b5ed7;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        padding: 25px;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      .subtitle {
+        font-size: 16px;
+      }
+
+      .section-title {
+        font-size: 22px;
+      }
+
+      .features li,
+      .info p {
+        font-size: 15px;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        text-align: center;
+        width: 100%;
+      }
+    }
+  </style>
 </head>
-<body style="font-family: Arial; padding: 40px; background: #f8f9fa;">
+<body>
+
+  <div class="card">
+    <div class="badge">Entry Level Software</div>
 
     <h1>MARG Basic</h1>
 
-    <p>Entry-level billing and accounting solution.</p>
+    <p class="subtitle">
+      Entry-level billing and accounting solution for small businesses.
+    </p>
 
-    <h2>Features</h2>
-    <ul>
-        <li>GST Billing</li>
-        <li>Purchase & Sales</li>
-        <li>Inventory Management</li>
-        <li>Stock Reports</li>
-        <li>Outstanding Reports</li>
-        <li>Basic Accounting</li>
+    <h2 class="section-title">Features</h2>
+
+    <ul class="features">
+      <li>GST Billing</li>
+      <li>Purchase & Sales</li>
+      <li>Inventory Management</li>
+      <li>Stock Reports</li>
+      <li>Outstanding Reports</li>
+      <li>Basic Accounting</li>
     </ul>
 
-    <p><strong>Price:</strong> Contact for Latest Price</p>
+    <div class="info">
+      <p><strong>Price:</strong> Contact for Latest Price</p>
+      <p><strong>Phone:</strong> +91-93544-29119</p>
+      <p><strong>Email:</strong> pkinfotech71@gmail.com</p>
+    </div>
 
-    <p><strong>Phone:</strong> +91-93544-29119</p>
-    <p><strong>Email:</strong> pkinfotech71@gmail.com</p>
+    <div class="buttons">
+      <a
+        href="https://wa.me/919354429119"
+        class="btn btn-whatsapp"
+        target="_blank"
+      >
+        Chat on WhatsApp
+      </a>
 
-    <p>
-        <a href="https://wa.me/919354429119">Chat on WhatsApp</a>
-    </p>
-
-    <p>
-        <a href="index.html">← Back to Home</a>
-    </p>
+      <a href="index.html" class="btn btn-home">
+        Back to Home
+      </a>
+    </div>
+  </div>
 
 </body>
 </html>
+```
+
+## क्या करना है
+
+1. GitHub पर `marg-basic.html` खोलो.
+2. पूरा पुराना code delete करो.
+3. ऊपर वाला पूरा code paste करो.
+4. Commit changes पर क्लिक करो.
+5. 1–2 मिनट बाद page refresh करो.
+
+अब तुम्हारा Basic page बहुत professional और attractive दिखेगा। 🚀
