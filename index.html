@@ -438,24 +438,25 @@ function sendToWhatsApp() {
     .call-float,
     .whatsapp-float,
     .download-btn {
+        right: 15px;
         padding: 10px 14px;
         font-size: 12px;
         border-radius: 25px;
     }
 
-    .call-float {
-        right: 15px;
-        bottom: 95px;
-    }
-
+    /* Bottom button */
     .whatsapp-float {
-        right: 15px;
         bottom: 20px;
     }
 
+    /* Middle button - about 3mm gap above WhatsApp */
+    .call-float {
+        bottom: 78px;
+    }
+
+    /* Top button - about 3mm gap above Call Now */
     .download-btn {
-        right: 15px;
-        bottom: 170px;
+        bottom: 136px;
     }
 }
 </style>
