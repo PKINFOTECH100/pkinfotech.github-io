@@ -402,13 +402,13 @@ function sendToWhatsApp() {
 }
 .download-btn {
     position: fixed;
-    right: 15px;
-    bottom: -45px;         /* WhatsApp button ke niche */
+    right: 15px;      /* Call Now और WhatsApp के साथ same alignment */
+    bottom: 140px;    /* WhatsApp के ऊपर */
     z-index: 9999;
-    display: inline-block;
-    background: #d9c2ff;   /* Soft light lavender */
-    color: #4a2c7a;
-    padding: 12px 18px;
+
+    background: #e8d9ff;   /* हल्का lavender color */
+    color: #4a2a7a;
+    padding: 12px 20px;
     border-radius: 30px;
     text-decoration: none;
     font-size: 14px;
@@ -423,7 +423,7 @@ function sendToWhatsApp() {
 @media (max-width: 768px) {
     .download-btn {
         right: 15px;
-        bottom: -45px;
+        bottom: 140px;
         padding: 12px 18px;
         font-size: 14px;
     }
