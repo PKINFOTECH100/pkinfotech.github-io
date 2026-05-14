@@ -241,6 +241,51 @@ justify-content: center;
 <footer>
   © 2026 P.K. INFOTECH. All Rights Reserved.
 </footer>
+<section style="margin-top:40px;">
+    <h2>Quick Enquiry</h2>
 
+    <form onsubmit="sendToWhatsApp(); return false;"
+          style="background:#ffffff; padding:25px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
+
+        <input type="text" id="name" placeholder="Your Name" required
+               style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ccc; border-radius:8px;">
+
+        <input type="tel" id="phone" placeholder="Mobile Number" required
+               style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ccc; border-radius:8px;">
+
+        <select id="product"
+                style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ccc; border-radius:8px;">
+            <option value="MARG Basic">MARG Basic</option>
+            <option value="MARG Silver">MARG Silver</option>
+            <option value="MARG Gold">MARG Gold</option>
+        </select>
+
+        <textarea id="message" placeholder="Your Message"
+                  style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ccc; border-radius:8px; height:100px;"></textarea>
+
+        <button type="submit"
+                style="background:#25D366; color:white; padding:14px 28px; border:none; border-radius:8px; font-size:16px; cursor:pointer;">
+            Send on WhatsApp
+        </button>
+    </form>
+</section>
+
+<script>
+function sendToWhatsApp() {
+    var name = document.getElementById('name').value;
+    var phone = document.getElementById('phone').value;
+    var product = document.getElementById('product').value;
+    var message = document.getElementById('message').value;
+
+    var text =
+        "New Enquiry%0A%0A" +
+        "Name: " + encodeURIComponent(name) + "%0A" +
+        "Phone: " + encodeURIComponent(phone) + "%0A" +
+        "Product: " + encodeURIComponent(product) + "%0A" +
+        "Message: " + encodeURIComponent(message);
+
+    window.open("https://wa.me/919354429119?text=" + text, "_blank");
+}
+</script>
 </body>
 </html>
