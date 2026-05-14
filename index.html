@@ -436,28 +436,27 @@ function sendToWhatsApp() {
 }
 @media (max-width: 768px) {
     .call-float,
-    .whatsapp-float {
+    .whatsapp-float,
+    .download-btn {
         right: 15px;
-        padding: 12px 18px;
-        font-size: 14px;
+        padding: 10px 14px;
+        font-size: 12px;
         border-radius: 25px;
     }
 
-    /* Download button smaller only on mobile */
-    .download-btn {
-        right: 15px;
-        bottom: 108px;
-        padding: 8px 12px;
-        font-size: 10px;
-        border-radius: 22px;
+    /* Bottom button */
+    .whatsapp-float {
+        bottom: 20px;
     }
 
+    /* Middle button - almost touching */
     .call-float {
         bottom: 64px;
     }
 
-    .whatsapp-float {
-        bottom: 20px;
+    /* Top button - almost touching */
+    .download-btn {
+        bottom: 108px;
     }
 }
 </style>
