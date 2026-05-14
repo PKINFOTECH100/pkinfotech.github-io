@@ -464,6 +464,54 @@ function sendToWhatsApp() {
         bottom: 108px;
     }
 }
+  @media (max-width: 768px) {
+  /* MARG logo को छोटा और सही जगह पर रखें */
+  header > img[alt="MARG ERP 9+"] {
+    height: 55px !important;
+    top: 8px !important;
+    left: 10px !important;
+    z-index: 10 !important;
+  }
+
+  /* Banner image */
+  header > img[alt="MARG ERP Banner"] {
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Header content नीचे शिफ्ट करें ताकि logo overlap न करे */
+  header {
+    padding-top: 180px !important;
+  }
+
+  /* Main heading */
+  header h1 {
+    font-size: 48px !important;
+    line-height: 1.1 !important;
+    margin-top: 0 !important;
+  }
+
+  /* Subheading */
+  header p {
+    font-size: 20px !important;
+    line-height: 1.5 !important;
+    margin: 16px 20px !important;
+  }
+
+  /* Feature list */
+  .hero-features {
+    margin-top: 16px !important;
+    gap: 14px !important;
+    font-size: 18px !important;
+  }
+
+  /* Main buttons */
+  .button-group {
+    margin-top: 20px !important;
+  }
+}
 </style>
   <a href="tel:+919354429119" class="call-float">📞 Call Now</a>
 <a href="https://download.margcompusoft.com/softwares/MARGERPSETUP.zip"
