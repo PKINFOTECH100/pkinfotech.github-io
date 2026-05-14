@@ -403,7 +403,7 @@ function sendToWhatsApp() {
 .download-btn {
     position: fixed;
     right: 15px;
-    bottom: 160px;
+    bottom: 165px;
     z-index: 9999;
 
     display: inline-block;
@@ -417,8 +417,22 @@ function sendToWhatsApp() {
     font-weight: bold;
 
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: 0.3s;
 }
-  
+
+.download-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .download-btn {
+        right: 15px;
+        bottom: 165px;
+        padding: 12px 18px;
+        font-size: 14px;
+    }
+}  
 </style>
   <a href="tel:+919354429119" class="call-float">📞 Call Now</a>
 <a href="https://download.margcompusoft.com/softwares/MARGERPSETUP.zip"
