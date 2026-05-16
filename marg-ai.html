@@ -168,7 +168,7 @@ Question: ${question}
 
             const data = await response.json();
 
-            let answer = "No response received.";
+          let answer = JSON.stringify(data, null, 2);
 
             if (
                 data.candidates &&
