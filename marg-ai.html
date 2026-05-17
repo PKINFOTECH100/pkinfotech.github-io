@@ -37,7 +37,6 @@ textarea {
     border: 2px solid #d0d0d0;
     border-radius: 10px;
     box-sizing: border-box;
-    resize: vertical;
 }
 
 button {
@@ -50,12 +49,10 @@ button {
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    transition: 0.3s;
 }
 
 button:hover {
     background: #0b5ed7;
-    transform: scale(1.02);
 }
 
 .note {
@@ -65,28 +62,67 @@ button:hover {
     font-size: 14px;
 }
 
-@media (max-width: 768px) {
-    body {
-        padding: 10px;
-    }
+/* Popup */
+#popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    max-width: 900px;
+    height: 70%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    z-index: 9999;
+    overflow: hidden;
+}
 
+.popup-header {
+    background: #003366;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.popup-header button {
+    width: auto;
+    margin: 0;
+    padding: 6px 12px;
+    font-size: 16px;
+    border-radius: 6px;
+}
+
+#videoFrame {
+    width: 100%;
+    height: calc(100% - 50px);
+    border: none;
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 9998;
+}
+
+@media (max-width: 768px) {
     .container {
         margin: 20px auto;
         padding: 20px;
     }
 
-    h1 {
-        font-size: 28px;
+    #popup {
+        width: 95%;
+        height: 75%;
     }
 
     textarea {
         height: 100px;
-        font-size: 16px;
-    }
-
-    button {
-        font-size: 18px;
-        padding: 14px;
     }
 }
 </style>
@@ -105,7 +141,20 @@ button:hover {
     </div>
 </div>
 
+<div id="overlay"></div>
+
+<div id="popup">
+    <div class="popup-header">
+        <button onclick="minimizePopup()">➖</button>
+        <button onclick="toggleFullscreen()">⛶</button>
+        <button onclick="closePopup()">✖</button>
+    </div>
+    <iframe id="videoFrame"></iframe>
+</div>
+
 <script>
+let isFullscreen = false;
+
 function searchYouTube() {
     const q = document.getElementById("query").value.trim();
 
@@ -115,12 +164,46 @@ function searchYouTube() {
     }
 
     const finalQuery = "MARG ERP " + q;
-
     const url =
         "https://www.youtube.com/results?search_query=" +
         encodeURIComponent(finalQuery);
 
-    window.open(url, "_blank");
+    document.getElementById("videoFrame").src = url;
+    document.getElementById("popup").style.display = "block";
+    document.getElementById("overlay").style.display = "block";
+}
+
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+    document.getElementById("overlay").style.display = "none";
+    document.getElementById("videoFrame").src = "";
+}
+
+function minimizePopup() {
+    document.getElementById("popup").style.display = "none";
+    document.getElementById("overlay").style.display = "none";
+}
+
+function toggleFullscreen() {
+    const popup = document.getElementById("popup");
+
+    if (!isFullscreen) {
+        popup.style.width = "100%";
+        popup.style.height = "100%";
+        popup.style.top = "0";
+        popup.style.left = "0";
+        popup.style.transform = "none";
+        popup.style.borderRadius = "0";
+        isFullscreen = true;
+    } else {
+        popup.style.width = "80%";
+        popup.style.height = "70%";
+        popup.style.top = "50%";
+        popup.style.left = "50%";
+        popup.style.transform = "translate(-50%, -50%)";
+        popup.style.borderRadius = "12px";
+        isFullscreen = false;
+    }
 }
 </script>
 
