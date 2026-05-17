@@ -544,12 +544,71 @@ object-position: top center !important;
     box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 </style>
-<a href="marg-ai.html" class="ai-float">🎥 YouTube Help</a>
+<a href="javascript:void(0)" class="ai-float" onclick="openYouTubeHelp()">🎥 YouTube Help</a>
   <a href="tel:+919354429119" class="call-float">📞 Call Now</a>
 <a href="https://download.margcompusoft.com/softwares/MARGERPSETUP.zip"
    class="download-btn"
    rel="noopener noreferrer">
    ⬇️ Download MARG ERP
 </a>
+ <!-- YouTube Help Popup -->
+<div id="ytOverlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:9998;"></div>
+
+<div id="ytPopup" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); width:90%; max-width:700px; background:#ffffff; padding:25px; border-radius:15px; box-shadow:0 10px 30px rgba(0,0,0,0.35); z-index:9999;">
+
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+        <h2 style="margin:0; color:#003366; font-family:Arial, sans-serif;">🎥 YouTube Help</h2>
+        <button onclick="closeYouTubeHelp()" style="background:#e74c3c; color:#fff; border:none; padding:8px 12px; border-radius:6px; cursor:pointer;">✖</button>
+    </div>
+
+    <textarea
+        id="ytQuery"
+        placeholder="Example: Item Master kaise banaye"
+        style="width:100%; height:120px; padding:15px; font-size:18px; border:2px solid #d0d0d0; border-radius:10px; box-sizing:border-box; resize:vertical;"
+    ></textarea>
+
+    <button
+        onclick="searchYouTubeHelp()"
+        style="width:100%; margin-top:15px; padding:15px; font-size:20px; background:#0d6efd; color:#fff; border:none; border-radius:10px; cursor:pointer;"
+    >
+        Search Video
+    </button>
+
+    <div style="margin-top:15px; text-align:center; color:#666; font-size:14px; font-family:Arial, sans-serif;">
+        MARG ERP automatically search me add ho jayega.
+    </div>
+</div>
+
+<script>
+function openYouTubeHelp() {
+    document.getElementById('ytOverlay').style.display = 'block';
+    document.getElementById('ytPopup').style.display = 'block';
+}
+
+function closeYouTubeHelp() {
+    document.getElementById('ytOverlay').style.display = 'none';
+    document.getElementById('ytPopup').style.display = 'none';
+}
+
+function searchYouTubeHelp() {
+    const q = document.getElementById('ytQuery').value.trim();
+
+    if (!q) {
+        alert('Please topic likhiye.');
+        return;
+    }
+
+    const finalQuery = 'MARG ERP ' + q;
+    const url = 'https://www.youtube.com/results?search_query=' + encodeURIComponent(finalQuery);
+
+    window.open(url, '_blank');
+}
+
+// Overlay par click karke popup close
+const ytOverlay = document.getElementById('ytOverlay');
+if (ytOverlay) {
+    ytOverlay.addEventListener('click', closeYouTubeHelp);
+}
+</script>   
 </body>
 </html>
