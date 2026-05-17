@@ -601,7 +601,7 @@ function searchYouTubeHelp() {
     const finalQuery = 'MARG ERP ' + q;
     const url = 'https://www.youtube.com/results?search_query=' + encodeURIComponent(finalQuery);
 
-    window.open(url, '_blank');
+ window.location.href = url;
 }
 
 // Overlay par click karke popup close
